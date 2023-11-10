@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Diwali</title>
+    <style>
+        body {
+            background-color: #000;
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        h1 {
+            text-align: center;
+            color: #fff;
+            font-size: 2em;
+            margin-top: 40vh; /* Adjust as needed */
+            font-family: 'Arial', sans-serif;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        h1 span {
+            display: inline-block;
+            animation: lightingEffect 4s linear infinite, glow 1s ease-in-out infinite alternate;
+        }
+
+        h1 span:nth-child(1) {
+            color: #948c8c; /* Red */
+        }
+
+        h1 span:nth-child(2) {
+            color: #10fa10; /* Green */
+        }
+
+        h1 span:nth-child(3) {
+            color: #ff006a; /* Blue */
+        }
+
+        .dot {
+            position: absolute;
+            border-radius: 50%;
+            animation: growAndChange 3s ease-in-out infinite;
+        }
+
+        .dot:nth-child(1) {
+            background-color: #ff6347; /* Tomato */
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            left: 30%;
+        }
+
+        .dot:nth-child(2) {
+            background-color: rgb(175, 114, 114); /* Deep Sky Blue */
+            width: 40px;
+            height: 40px;
+            top: 20%;
+            left: 50%;
+        }
+
+        .dot:nth-child(3) {
+            background-color: #ffd700; /* Gold */
+            width: 25px;
+            height: 25px;
+            top: 50%;
+            left: 10%;
+        }
+
+        /* Add more dots with different styles */
+        .dot:nth-child(4) {
+            background-color: #00ff00; /* Lime */
+            width: 35px;
+            height: 35px;
+            top: 80%;
+            left: 20%;
+        }
+
+        .dot:nth-child(5) {
+            background-color: #9400d3; /* Dark Violet */
+            width: 50px;
+            height: 50px;
+            top: 70%;
+            left: 80%;
+        }
+
+        .dot:nth-child(6) {
+            background-color: #ffa500; /* Orange */
+            width: 45px;
+            height: 45px;
+            top: 30%;
+            left: 60%;
+        }
+
+        .dot:nth-child(7) {
+            background-color: #8a2be2; /* Blue Violet */
+            width: 55px;
+            height: 55px;
+            top: 50%;
+            left: 30%;
+        }
+
+        .dot:nth-child(8) {
+            background-color: #ff69b4; /* Hot Pink */
+            width: 48px;
+            height: 48px;
+            top: 10%;
+            left: 80%;
+        }
+
+        .dashed-line {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 80%;
+            height: 0;
+            border-top: 2px dashed #fff;
+            animation: moveDashedLine 5s linear infinite, colorChange 2s ease-in-out infinite alternate;
+        }
+
+        .opposite-dashed-line {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 80%;
+            height: 0;
+            border-top: 2px dashed #fff;
+            animation: moveOppositeDashedLine 5s linear infinite, colorChange 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes moveDashedLine {
+            0%, 100% {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            25% {
+                transform: translate(-50%, -50%) rotate(90deg);
+            }
+            50% {
+                transform: translate(-50%, -50%) rotate(180deg);
+            }
+            75% {
+                transform: translate(-50%, -50%) rotate(270deg);
+            }
+        }
+
+        @keyframes moveOppositeDashedLine {
+            0%, 100% {
+                transform: translate(-50%, -50%) rotate(180deg);
+            }
+            25% {
+                transform: translate(-50%, -50%) rotate(270deg);
+            }
+            50% {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            75% {
+                transform: translate(-50%, -50%) rotate(90deg);
+            }
+        }
+
+        @keyframes colorChange {
+            0% {
+                border-top-color: #fff;
+            }
+            10% {
+                border-top-color: rgb(39, 72, 17);
+            }
+            30% {
+                border-top-color: rgb(17, 60, 72);
+            }
+            70% {
+                border-top-color: rgba(241, 244, 244, 0)
+            }
+            100% {
+                border-top-color: #ff4500; /* Orange Red */
+            }
+        }
+
+        .rectangle {
+            position: absolute;
+            left: 50%;
+            top: 10%;
+            width: 50px;
+            height: 20px;
+            background-color: #00bfff; /* Initial color */
+            animation: moveRectangle1 5s linear infinite, colorChangeRectangle2 1s ease-in-out infinite alternate;
+        }
+
+        @keyframes moveRectangle1 {
+            0%, 100% {
+                transform: translateX(-50%) translateY(-50%) rotate(0deg);
+            }
+            25% {
+                transform: translateX(-50%) translateY(-50%) rotate(90deg);
+            }
+            50% {
+                transform: translateX(-50%) translateY(-50%) rotate(180deg);
+            }
+            75% {
+                transform: translateX(-50%) translateY(-50%) rotate(270deg);
+            }
+        }
+
+        @keyframes colorChangeRectangle1 {
+            0% {
+                background-color: #ff6347;
+            }
+            100% {
+                background-color: #00ff00; /* Lime */
+            }
+        }
+
+        @keyframes lightingEffect {
+            0%, 100% {
+                transform: translateX(-100%);
+            }
+            50% {
+                transform: translateX(100%);
+            }
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            }
+            100% {
+                text-shadow: 0 0 20px rgb(85, 46, 46),
+                             0 0 30px rgba(255, 255, 255, 0.8),
+                             0 0 40px rgba(39, 121, 169, 0.6);
+            }
+        }
+
+        @keyframes growAndChange {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.5);
+                background-color: rgba(255, 255, 255, 0.8);
+            }
+        }
+
+        .bottom-image {
+            position: absolute;
+            border-radius: 50%;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-100%);
+            animation: moveImage 4s linear infinite;
+        }
+
+        @keyframes moveImage {
+            0%, 100% {
+                transform: translateX(-100%);
+            }
+            50% {
+                transform: translateX(0%);
+            }
+        }
+
+        .container {
+            position: relative;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>
+            <span>Happy</span>
+            <span>Diwali</span>
+            <span>Team</span>
+            <span>Ambir!</span>
+        </h1>
+
+        <!-- Dots -->
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <!-- Add more dots... -->
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+
+        <!-- Dashed Lines -->
+        <div class="dashed-line"></div>
+        <div class="opposite-dashed-line"></div>
+
+        <!-- Rectangles following the path -->
+        <div class="rectangle"></div>
+
+        <!-- Colored Dots -->
+        <div class="colored-dot dot1"></div>
+        <div class="colored-dot dot2"></div>
+        <!-- Add more colored dots as needed -->
+
+        <!-- Bottom Image -->
+        <img class="bottom-image" src="diya.png" alt="Diwali Image" width="200px" height="200px">
+    </div>
+</body>
+</html>
